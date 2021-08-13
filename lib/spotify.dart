@@ -27,6 +27,7 @@ part 'src/endpoints/audio_features.dart';
 part 'src/endpoints/categories.dart';
 part 'src/endpoints/shows.dart';
 part 'src/endpoints/me.dart';
+part 'src/endpoints/audio_analysis.dart';
 
 part 'src/spotify_credentials.dart';
 part 'src/spotify_base.dart';
