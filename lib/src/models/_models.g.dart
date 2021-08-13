@@ -625,7 +625,7 @@ Section _$SectionFromJson(Map<String, dynamic> json) {
     ..tempoConfidence = (json['tempo_confidence'] as num?)?.toDouble()
     ..key = json['key'] as int?
     ..keyConfidence = (json['key_confidence'] as num?)?.toDouble()
-    ..mode = json['mode'] as int?
+    ..mode = (json['mode'] as num?)?.toDouble()
     ..modeConfidence = (json['mode_confidence'] as num?)?.toDouble()
     ..timeSignature = json['time_signature'] as int?
     ..timeSignatureConfidence =

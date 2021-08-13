@@ -44,7 +44,7 @@ class Section extends Object {
 
   ///
   @JsonKey(name: 'mode')
-  int? mode;
+  double? mode;
 
   ///
   @JsonKey(name: 'mode_confidence')
