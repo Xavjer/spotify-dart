@@ -611,10 +611,10 @@ Meta _$MetaFromJson(Map<String, dynamic> json) {
     ..platform = json['platform'] as String?
     ..detailedStatus = json['detailed_status'] as String?
     ..status_code = json['status_code'] as int?
-    ..timestamp = json['timestamp'] as String?
-    ..analysisTime = json['analysis_time'] == null
+    ..timestamp = json['timestamp'] == null
         ? null
-        : DateTime.parse(json['analysis_time'] as String)
+        : DateTime.parse(json['timestamp'] as String)
+    ..analysisTime = (json['analysis_time'] as num?)?.toDouble()
     ..inputProcess = json['input_process'] as String?;
 }
 

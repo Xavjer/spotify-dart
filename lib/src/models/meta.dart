@@ -25,11 +25,11 @@ class Meta extends Object {
   int? status_code;
 
   ///
-  String? timestamp;
+  DateTime? timestamp;
 
   ///
   @JsonKey(name: 'analysis_time')
-  DateTime? analysisTime;
+  double? analysisTime;
 
   ///
   @JsonKey(name: 'input_process')
