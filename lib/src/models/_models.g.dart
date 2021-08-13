@@ -637,10 +637,10 @@ Segment _$SegmentFromJson(Map<String, dynamic> json) {
     ..start = (json['start'] as num?)?.toDouble()
     ..duration = (json['duration'] as num?)?.toDouble()
     ..confidence = (json['confidence'] as num?)?.toDouble()
-    ..loudnessStart = json['loudness_start'] as int?
-    ..loudnessMaxTime = json['loudness_max_time'] as int?
-    ..loudnessMax = json['loudness_max'] as int?
-    ..loudnessEnd = json['loudness_end'] as int?
+    ..loudnessStart = (json['loudness_start'] as num?)?.toDouble()
+    ..loudnessMaxTime = (json['loudness_max_time'] as num?)?.toDouble()
+    ..loudnessMax = (json['loudness_max'] as num?)?.toDouble()
+    ..loudnessEnd = (json['loudness_end'] as num?)?.toDouble()
     ..pitches = (json['pitches'] as List<dynamic>?)
         ?.map((e) => (e as num).toDouble())
         .toList()

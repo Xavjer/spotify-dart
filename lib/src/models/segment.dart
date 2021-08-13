@@ -24,19 +24,19 @@ class Segment extends Object {
 
   ///
   @JsonKey(name: 'loudness_start')
-  int? loudnessStart;
+  double? loudnessStart;
 
   ///
   @JsonKey(name: 'loudness_max_time')
-  int? loudnessMaxTime;
+  double? loudnessMaxTime;
 
   ///
   @JsonKey(name: 'loudness_max')
-  int? loudnessMax;
+  double? loudnessMax;
 
   ///
   @JsonKey(name: 'loudness_end')
-  int? loudnessEnd;
+  double? loudnessEnd;
 
   List<double>? pitches;
 
