@@ -87,5 +87,5 @@ class TrackMeta extends Object {
 
   ///
   @JsonKey(name: 'rhythm_version')
-  int? rhythmVersion;
+  double? rhythmVersion;
 }

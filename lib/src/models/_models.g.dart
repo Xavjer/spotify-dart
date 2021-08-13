@@ -671,5 +671,5 @@ TrackMeta _$TrackMetaFromJson(Map<String, dynamic> json) {
     ..mode = (json['mode'] as num?)?.toDouble()
     ..modeConfidence = (json['mode_confidence'] as num?)?.toDouble()
     ..codestring = json['codestring'] as String?
-    ..rhythmVersion = json['rhythm_version'] as int?;
+    ..rhythmVersion = (json['rhythm_version'] as num?)?.toDouble();
 }
