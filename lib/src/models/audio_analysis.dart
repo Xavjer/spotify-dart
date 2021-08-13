@@ -4,11 +4,11 @@
 part of spotify.models;
 
 @JsonSerializable(createToJson: false)
-class AudioAnalysis extends Object {
-  AudioAnalysis();
+class AudioAnalysiss extends Object {
+  AudioAnalysiss();
 
-  factory AudioAnalysis.fromJson(Map<String, dynamic> json) =>
-      _$AudioAnalysisFromJson(json);
+  factory AudioAnalysiss.fromJson(Map<String, dynamic> json) =>
+      _$AudioAnalysissFromJson(json);
 
   ///
   Meta? meta;

@@ -9,10 +9,10 @@ class AudioAnalysis extends EndpointBase {
 
   AudioAnalysis(SpotifyApiBase api) : super(api);
 
-  Future<AudioAnalysis> get(String trackId) async {
+  Future<AudioAnalysiss> get(String trackId) async {
     var jsonString = await _api._get('$_path/$trackId');
     var map = json.decode(jsonString);
 
-    return AudioAnalysis.fromJson(map);
+    return AudioAnalysiss.fromJson(map);
   }
 }

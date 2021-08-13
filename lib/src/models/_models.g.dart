@@ -573,8 +573,8 @@ PlayHistory _$PlayHistoryFromJson(Map<String, dynamic> json) {
         : PlayerContext.fromJson(json['context'] as Map<String, dynamic>);
 }
 
-AudioAnalysis _$AudioAnalysisFromJson(Map<String, dynamic> json) {
-  return AudioAnalysis()
+AudioAnalysiss _$AudioAnalysissFromJson(Map<String, dynamic> json) {
+  return AudioAnalysiss()
     ..meta = json['meta'] == null
         ? null
         : Meta.fromJson(json['meta'] as Map<String, dynamic>)
