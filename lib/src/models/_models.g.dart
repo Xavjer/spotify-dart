@@ -572,3 +572,107 @@ PlayHistory _$PlayHistoryFromJson(Map<String, dynamic> json) {
         ? null
         : PlayerContext.fromJson(json['context'] as Map<String, dynamic>);
 }
+
+AudioAnalysis _$AudioAnalysisFromJson(Map<String, dynamic> json) {
+  return AudioAnalysis()
+    ..meta = json['meta'] == null
+        ? null
+        : Meta.fromJson(json['meta'] as Map<String, dynamic>)
+    ..trackMeta = json['track'] == null
+        ? null
+        : TrackMeta.fromJson(json['track'] as Map<String, dynamic>)
+    ..bars = (json['bars'] as List<dynamic>?)
+        ?.map((e) => Bar.fromJson(e as Map<String, dynamic>))
+        .toList()
+    ..beats = (json['beats'] as List<dynamic>?)
+        ?.map((e) => Bar.fromJson(e as Map<String, dynamic>))
+        .toList()
+    ..sections = (json['sections'] as List<dynamic>?)
+        ?.map((e) => Section.fromJson(e as Map<String, dynamic>))
+        .toList()
+    ..segments = (json['segments'] as List<dynamic>?)
+        ?.map((e) => Segment.fromJson(e as Map<String, dynamic>))
+        .toList()
+    ..tatums = (json['tatums'] as List<dynamic>?)
+        ?.map((e) => Bar.fromJson(e as Map<String, dynamic>))
+        .toList();
+}
+
+Bar _$BarFromJson(Map<String, dynamic> json) {
+  return Bar()
+    ..start = (json['start'] as num?)?.toDouble()
+    ..duration = (json['duration'] as num?)?.toDouble()
+    ..confidence = (json['confidence'] as num?)?.toDouble();
+}
+
+Meta _$MetaFromJson(Map<String, dynamic> json) {
+  return Meta()
+    ..analyzerVersion = json['analyzer_version'] as String?
+    ..platform = json['platform'] as String?
+    ..detailedStatus = json['detailed_status'] as String?
+    ..status_code = json['status_code'] as int?
+    ..timestamp = json['timestamp'] as String?
+    ..analysisTime = json['analysis_time'] == null
+        ? null
+        : DateTime.parse(json['analysis_time'] as String)
+    ..inputProcess = json['input_process'] as String?;
+}
+
+Section _$SectionFromJson(Map<String, dynamic> json) {
+  return Section()
+    ..start = (json['start'] as num?)?.toDouble()
+    ..duration = (json['duration'] as num?)?.toDouble()
+    ..confidence = (json['confidence'] as num?)?.toDouble()
+    ..loudness = (json['loudness'] as num?)?.toDouble()
+    ..tempo = (json['tempo'] as num?)?.toDouble()
+    ..tempoConfidence = (json['tempo_confidence'] as num?)?.toDouble()
+    ..key = json['key'] as int?
+    ..keyConfidence = (json['key_confidence'] as num?)?.toDouble()
+    ..mode = json['mode'] as int?
+    ..modeConfidence = (json['mode_confidence'] as num?)?.toDouble()
+    ..timeSignature = json['time_signature'] as int?
+    ..timeSignatureConfidence =
+        (json['time_signature_confidence'] as num?)?.toDouble();
+}
+
+Segment _$SegmentFromJson(Map<String, dynamic> json) {
+  return Segment()
+    ..start = (json['start'] as num?)?.toDouble()
+    ..duration = (json['duration'] as num?)?.toDouble()
+    ..confidence = (json['confidence'] as num?)?.toDouble()
+    ..loudnessStart = json['loudness_start'] as int?
+    ..loudnessMaxTime = json['loudness_max_time'] as int?
+    ..loudnessMax = json['loudness_max'] as int?
+    ..loudnessEnd = json['loudness_end'] as int?
+    ..pitches = (json['pitches'] as List<dynamic>?)
+        ?.map((e) => (e as num).toDouble())
+        .toList()
+    ..timbre = (json['timbre'] as List<dynamic>?)
+        ?.map((e) => (e as num).toDouble())
+        .toList();
+}
+
+TrackMeta _$TrackMetaFromJson(Map<String, dynamic> json) {
+  return TrackMeta()
+    ..numSamples = json['num_samples'] as int?
+    ..duration = (json['duration'] as num?)?.toDouble()
+    ..sampleMd5 = json['sample_md5'] as String?
+    ..offsetSeconds = json['offset_seconds'] as int?
+    ..windowSeconds = json['window_seconds'] as int?
+    ..analysisSampleRate = json['analysis_sample_rate'] as int?
+    ..analysisChannels = json['analysis_channels'] as int?
+    ..endOfFadeIn = (json['end_of_fade_in'] as num?)?.toDouble()
+    ..startOfFadeOut = (json['start_of_fade_out'] as num?)?.toDouble()
+    ..loudness = (json['loudness'] as num?)?.toDouble()
+    ..tempo = (json['tempo'] as num?)?.toDouble()
+    ..tempoConfidence = (json['tempo_confidence'] as num?)?.toDouble()
+    ..timeSignature = json['time_signature'] as int?
+    ..timeSignatureConfidence =
+        (json['time_signature_confidence'] as num?)?.toDouble()
+    ..key = json['key'] as int?
+    ..keyConfidence = (json['key_confidence'] as num?)?.toDouble()
+    ..mode = json['mode'] as int?
+    ..modeConfidence = (json['mode_confidence'] as num?)?.toDouble()
+    ..codestring = json['codestring'] as String?
+    ..rhythmVersion = json['rhythm_version'] as int?;
+}
